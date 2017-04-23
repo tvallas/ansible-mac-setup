@@ -10,3 +10,5 @@ Session.vim
 .netrwhist
 *~
 *.DS_Store
+Thumbs.db
+.bundle
