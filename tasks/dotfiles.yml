@@ -1,0 +1,13 @@
+---
+
+- name: "Copy .bash_profile file"
+  copy:
+    src: "files/dotfiles/bash_profile"
+    dest: "~/.bash_profile"
+    backup: yes
+
+- name: "Copy .vimrc file"
+  copy:
+    src: "files/dotfiles/vimrc"
+    dest: "~/.vimrc"
+    backup: yes

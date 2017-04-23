@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  strategy: debug
+
+  vars_files:
+    - defaults/main.yml
+
+  tasks:
+    - include: tasks/ansible-setup.yml
+    - include: tasks/homebrew.yml
+    - include: tasks/atom.yml
+    - include: tasks/dotfiles.yml
+    # - include: tasks/osx.yml
+    #   when: configure_osx

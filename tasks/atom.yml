@@ -1,0 +1,12 @@
+---
+  # Install comminity packages for atom editor
+
+- name: List currently installed atom packages
+  command: "apm list"
+  register: atom_installed_packages
+  changed_when: false
+
+- name: Install atom packages
+  command: "apm install {{ item }}"
+  when:  "item not in atom_installed_packages.stdout"
+  with_items: "{{ apm_packages }}"

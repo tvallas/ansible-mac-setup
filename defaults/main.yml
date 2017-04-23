@@ -1,0 +1,137 @@
+---
+downloads: ~/.ansible-downloads/
+
+apm_packages:
+  - Sublime-Style-Column-Selection
+  - atom-beautify
+  - atom-jinja2
+  - atom-material-syntax
+  - atom-material-ui
+  - auto-detect-indentation
+  - busy-signal
+  - git-control
+  - git-plus
+  - highlight-selected
+  - intentions
+  - jsonlint
+  - linter
+  - linter-js-yaml
+  - linter-jsonlint
+  - linter-ui-default
+  - minimap
+  - minimap-highlight-selected
+  - sort-lines
+  - language-puppet
+  - language-ansible
+  - todo-show
+
+homebrew_repo: https://github.com/Homebrew/brew
+
+homebrew_prefix: /usr/local
+homebrew_install_path: "{{ homebrew_prefix }}/Homebrew"
+homebrew_brew_bin_path: /usr/local/bin
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - adns
+  - ansible-cmdb
+  - autoconf
+  - automake
+  - bash
+  - bash-completion
+  - chromedriver
+  - colordiff
+  - coreutils
+  - cowsay
+  - doxygen
+  - gdbm
+  - gettext
+  - gifsicle
+  - git
+  - glib
+  - gmp
+  - gnupg
+  - gnutls
+  - gpg
+  - httpie
+  - hub
+  - icu4c
+  - iperf
+  - libassuan
+  - libevent
+  - libffi
+  - libgcrypt
+  - libgpg-error
+  - libksba
+  - libtasn1
+  - libtool
+  - libunistring
+  - libusb
+  - libyaml
+  - mcrypt
+  - mhash
+  - mobile-shell
+  - nettle
+  - nmap
+  - node
+  - npm
+  - npth
+  - nvm
+  - openconnect
+  - openssl
+  - p11-kit
+  - pcre
+  - perl
+  - pinentry
+  - pkg-config
+  - protobuf
+  - pv
+  - pwgen
+  - python
+  - python3
+  - readline
+  - ruby
+  - sqlite
+  - ssh-copy-id
+  - sshfs
+  - tmux
+  - tree
+  - unrar
+  - vagrant-completion
+  - vim
+  - wget
+  - wrk
+  - xz
+
+homebrew_uninstalled_packages: []
+
+homebrew_upgrade_all_packages: no
+
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/php
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - google-chrome
+  - github-desktop
+  - atom
+  - sourcetree
+  - skype
+  - spotify
+  - duet
+  - onedrive
+  - dropbox
+  - iterm2
+  - lastpass
+  - skitch
+  - slack
+  - vagrant
+  - virtualbox
+
+homebrew_use_brewfile: true
+homebrew_brewfile_dir: '~'

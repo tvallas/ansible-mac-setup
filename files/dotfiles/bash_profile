@@ -1,0 +1,12 @@
+source ~/.iterm2_shell_integration.`basename $SHELL`
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export TERM="xterm-color"
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export SUDO_PS1="\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[m\]@\[$(tput sgr0)\]\[\033[38;5;2m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\\$\[$(tput sgr0)\] "
+alias ls='ls -GFh'
+alias ll="ls -lahF"
