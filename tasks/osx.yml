@@ -1,0 +1,407 @@
+---
+
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
+
+- name: Expand save panel by default
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSNavPanelExpandedStateForSaveMode
+    type: bool
+    value: false
+
+- name: Expand print panel by default
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: PMPrintingExpandedStateForPrint
+    type: bool
+    value: false
+
+- name: Save to disk (not to iCloud) by default
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSDocumentSaveNewDocumentsToCloud
+    type: bool
+    value: false
+
+- name: Automatically quit printer app once the print jobs complete
+  osx_defaults:
+    domain: com.apple.print.PrintingPrefs
+    key: "Quit When Finished"
+    type: bool
+    value: true
+
+- name: Disable auto-correct
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+
+- name: Disable smart quotes
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: bool
+    value: false
+
+- name: Disable smart dashes
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled
+    type: bool
+    value: false
+
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+- name: Use scroll gesture with the Ctrl (^) modifier key to zoom (1/2)
+  osx_defaults:
+    domain: com.apple.universalaccess
+    key: closeViewScrollWheelToggle
+    type: bool
+    value: true
+
+- name: Use scroll gesture with the Ctrl (^) modifier key to zoom (2/2)
+  osx_defaults:
+    domain: com.apple.universalaccess
+    key: HIDScrollZoomModifierMask
+    type: int
+    value: 262144
+
+- name: Follow the keyboard focus while zoomed in
+  osx_defaults:
+    domain: com.apple.universalaccess
+    key: closeViewZoomFollowsFocus
+    type: bool
+    value: true
+
+- name: Disable press-and-hold for keys in favor of key repeat
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+
+- name: Set short initial key repeat delay
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: int
+    value: 20
+
+- name: Set short key repeat delay
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: KeyRepeat
+    type: int
+    value: 1
+
+- name: Disable auto-correct
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+
+###############################################################################
+# Screen stuff                                                                #
+###############################################################################
+
+
+- name: Require password from screensaver
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: 1
+
+- name: Require password immediately
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: int
+    value: 0
+
+- name: Save screenshots to the desktop
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: "${HOME}/Desktop"
+
+- name: Save screenshots in PNG format (other options BMP, GIF, JPG, PDF, TIFF)
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: type
+    type: string
+    value: "png"
+
+- name: Disable shadow in screenshots
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+
+- name: Enable subpixel font rendering on non-Apple LCDs
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleFontSmoothing
+    type: int
+    value: 2
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Set Desktop as the default location for new Finder windows
+# New window target
+# Computer     : `PfCm`
+# Volume       : `PfVo`
+# $HOME        : `PfHm`
+# Desktop      : `PfDe`
+# Documents    : `PfDo`
+# All My Files : `PfAF`
+# Other…       : `PfLo`
+- name: Set Desktop as the default location for new Finder windows
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: "PfDe"
+
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
+- name: Use column view in all Finder windows by default
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: "clmv"
+
+- name: Show icons for external hard drives on the desktop
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowExternalHardDrivesOnDesktop
+    type: bool
+    value: true
+
+- name: Show icons for hard drives on the desktop
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
+    type: bool
+    value: true
+
+- name: Show icons for servers on the desktop
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowMountedServersOnDesktop
+    type: bool
+    value: true
+
+- name: Show icons for removable media on the desktop
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowRemovableMediaOnDesktop
+    type: bool
+    value: true
+
+- name: Show all filename extensions
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+
+- name: Show status bar
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+
+- name: Show path bar
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: true
+
+- name: Allow text selection in Quick Look
+  osx_defaults:
+    domain: com.apple.finder
+    key: QLEnableTextSelection
+    type: bool
+    value: true
+
+- name: Display full POSIX path as Finder window title
+  osx_defaults:
+    domain: com.apple.finder
+    key: _FXShowPosixPathInTitle
+    type: bool
+    value: true
+
+- name: When performing a search, search the current folder by default
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXDefaultSearchScope
+    type: string
+    value: "SCcf"
+
+- name: Disable the warning when changing a file extension
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    type: bool
+    value: false
+
+- name: Enable spring loading for directories
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.springing.enabled
+    type: bool
+    value: true
+
+- name: Remove the spring loading delay for directories
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.springing.delay
+    type: float
+    value: 0.1
+
+- name: Avoid creating .DS_Store files on network volumes
+  osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: bool
+    value: true
+
+
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+
+- name: Set the icon size of Dock items
+  osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 30
+
+- name: Speed up Mission Control animations
+  osx_defaults:
+    domain: com.apple.dock
+    key: expose-animation-duration
+    type: float
+    value: 0.15
+
+- name: Make Dock icons of hidden applications translucent
+  osx_defaults:
+    domain: com.apple.dock
+    key: showhidden
+    type: bool
+    value: true
+
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+- name: Bottom right screen corner => Mission Control (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-br-corner
+    type: int
+    value: 2
+
+- name: Bottom right screen corner => Mission Control (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-br-modifier
+    type: int
+    value: 0
+
+- name: Bottom left screen corner => no-op (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-bl-corner
+    type: int
+    value: 0
+
+- name: Bottom left screen corner => no-op (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-bl-modifier
+    type: int
+    value: 0
+
+- name: Top right screen corner => Show desktop (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-tr-corner
+    type: int
+    value: 4
+
+- name: Top right screen corner => Show desktop (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-tr-modifier
+    type: int
+    value: 0
+
+- name: Top left screen corner => Start screen saver (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-tl-corner
+    type: int
+    value: 5
+
+- name: Top right screen corner => Start screen saver (1/2)
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-tl-modifier
+    type: int
+    value: 0
+
+###############################################################################
+# Activity Monitor                                                            #
+###############################################################################
+
+- name: Show the main window when launching Activity Monitor
+  osx_defaults:
+    domain: com.apple.ActivityMonitor
+    key: OpenMainWindow
+    type: bool
+    value: true
+
+- name: Show the main window when launching Activity Monitor
+  osx_defaults:
+    domain: com.apple.ActivityMonitor
+    key: IconType
+    type: int
+    value: 5
+
+- name: Show all processes in Activity Monitor
+  osx_defaults:
+    domain: com.apple.ActivityMonitor
+    key: ShowCategory
+    type: int
+    value: 0
+
+###############################################################################
+# Instructions                                                                #
+###############################################################################
+
+- name: Print logout/login instructions
+  debug:
+    msg: Please log out and log back in to make all settings take effect"
