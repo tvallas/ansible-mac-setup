@@ -3,6 +3,7 @@ source ~/.iterm2_shell_integration.`basename $SHELL`
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
+export HISTTIMEFORMAT="%Y-%m-%d %T "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export TERM="xterm-color"
