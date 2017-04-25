@@ -122,7 +122,7 @@
   osx_defaults:
     domain: com.apple.screensaver
     key: askForPasswordDelay
-    type: int
+    type: float
     value: 0
 
 - name: Save screenshots to the desktop
