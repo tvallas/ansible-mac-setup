@@ -43,7 +43,6 @@ homebrew_installed_packages:
   - coreutils
   - doxygen
   - gdbm
-  - gettext
   - gifsicle
   - git
   - glib
@@ -53,11 +52,9 @@ homebrew_installed_packages:
   - gpg
   - httpie
   - hub
-  - icu4c
   - iperf
   - libassuan
   - libevent
-  - libffi
   - libgcrypt
   - libgpg-error
   - libksba
@@ -76,7 +73,6 @@ homebrew_installed_packages:
   - npth
   - nvm
   - openconnect
-  - openssl
   - p11-kit
   - pcre
   - perl
@@ -87,11 +83,9 @@ homebrew_installed_packages:
   - pwgen
   - python
   - python3
-  - readline
   - ruby
   - sqlite
   - ssh-copy-id
-  - sshfs
   - tmux
   - tree
   - unrar
